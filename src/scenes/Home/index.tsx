@@ -41,7 +41,16 @@ visible: { opacity: 1, x: 0},
                     <img alt="home-page=text" src={HomePageText} />
                 </div>
                 {/** ACTIONS */}
-                <div className="mt-8 flex items-center gap-8">
+                <motion.div
+                       initial="hidden"
+                       whileInView="visible"
+                       viewport={{once:true,  amount: 0.5}}
+                       transition={{ delay: 0.2,  duration: 1}}
+                       variants={{
+               hidden: { opacity: 0, x:-100},
+               visible: { opacity: 1, x: 0},
+                       }}
+                className="mt-8 flex items-center gap-8">
                 <ActionButton setSelectedPage={setSelectedpage}>
                     Join Now
                 </ActionButton>
@@ -53,7 +62,7 @@ visible: { opacity: 1, x: 0},
                         Learn more
                     </p>
                 </AnchorLink>
-            </div>
+            </motion.div>
             <p className="mt-8 text-sm ">
             Find out how you can use gym SMS templates and text message marketing to improve client onboarding and bring more clients to your fitness center!
             </p>
