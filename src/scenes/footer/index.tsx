@@ -1,6 +1,5 @@
 import Logo from "@/assets/Logo.png";
-
-type Props = {};
+import { FC } from "react";
 
 const Footer = () => {
   return (
