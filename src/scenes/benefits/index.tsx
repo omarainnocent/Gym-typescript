@@ -9,7 +9,7 @@ import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 
 const childVariant = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
 };
 
 const container = {
@@ -17,7 +17,7 @@ const container = {
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { staggerChildren: 0.2 },
+        transition: { staggerChildren: 0.3, duration: 0.6 },
     },
 };
 
@@ -79,7 +79,7 @@ const Benefits: React.FC<Props> = ({ setSelectedPage }) => {
                         <motion.div
                             key={benefit.title}
                             variants={childVariant}
-                            className="border-2 border-gray-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 hover:scale-105"
+                            className="border-2 border-gray-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105"
                         >
                             <Benefit
                                 icon={benefit.icon}
@@ -101,7 +101,8 @@ const Benefits: React.FC<Props> = ({ setSelectedPage }) => {
                     src={BenefitsPageGraphic}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    loading="lazy"
                 />
 
                 {/* DESCRIPTION */}
